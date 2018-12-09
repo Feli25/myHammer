@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">MyHammer Coding Challenge</a>
+  <div  id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Alle aktiven Jobs <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="https://www.my-hammer.de/">MyHammer</a>
+    </div>
+  </div>
+</nav>
+<div style="text-align:center">
+<div class="two-panels">
+<app-table [jobs]=jobs (chooseJob)="chooseJobHandler($event)"></app-table>
+<app-details [selectedJob]=selectedJob [hidden]=hide></app-details>
+</div>
+</div>
+
