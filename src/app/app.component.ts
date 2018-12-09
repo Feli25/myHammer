@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-var Jobs = require('../../jobs.json')
-var activeJobs = Jobs.body.filter(job => job.state == "active")
+import {JobService} from './app.service'
+// var Jobs = require('../../jobs.json')
+// var activeJobs = Jobs.body.filter(job => job.state == "active")
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,10 @@ export class AppComponent {
   selectedJob : Object;
   hide : boolean;
 
-  constructor(){
+  constructor(private jobService: JobService){
+    
     this.title = 'the MyHammer Frontend Coding Challenge';
-    this.jobs = activeJobs;
+    // this.jobs = activeJobs;
     this.hide = true
     this.selectedJob = {
       title: "",
@@ -27,5 +29,8 @@ export class AppComponent {
   chooseJobHandler(job: any){
     this.hide = false
     this.selectedJob = job
+  }
+  onInit(){
+    this.jobs = this.jobService.getJobs()
   }
 }
