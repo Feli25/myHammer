@@ -1,10 +1,9 @@
-<table class="table">
-  <thead>
-    <th>Active Jobs</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let job of jobs" (click)="clicked(job)">
-      <hr><p>{{job.title}}</p>
-    </tr>
-  </tbody>
-</table>
+<div class="card table" style="width: 18rem;">
+  <div class="card-header">
+    Aktive Jobs
+  </div>
+  <ul class="list-group list-group-flush" >
+    <li class="list-group-item" *ngFor="let job of jobs" (click)="clicked(job)">{{job.title}}</li>
+
+  </ul>
+</div>
