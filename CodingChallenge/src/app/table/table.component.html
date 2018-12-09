@@ -1,0 +1,10 @@
+<table class="table">
+  <thead>
+    <th>Active Jobs</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobs" (click)="clicked(job)">
+      <hr><p>{{job.title}}</p>
+    </tr>
+  </tbody>
+</table>
