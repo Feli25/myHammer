@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {JobService} from './app.service'
-// var Jobs = require('../../jobs.json')
-// var activeJobs = Jobs.body.filter(job => job.state == "active")
+import {JobService} from './config/config.service'
 
 @Component({
   selector: 'app-root',
@@ -15,9 +13,7 @@ export class AppComponent {
   hide : boolean;
 
   constructor(private jobService: JobService){
-    
     this.title = 'the MyHammer Frontend Coding Challenge';
-    // this.jobs = activeJobs;
     this.hide = true
     this.selectedJob = {
       title: "",
@@ -30,7 +26,10 @@ export class AppComponent {
     this.hide = false
     this.selectedJob = job
   }
-  onInit(){
-    this.jobs = this.jobService.getJobs()
+  ngOnInit(){
+    this.jobService.getJobs()
+      .subscribe((data: any) =>  {
+        this.jobs = data.body.filter(job => job.state == "active")
+      })
   }
 }

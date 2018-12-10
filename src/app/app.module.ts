@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { DetailsComponent } from './details/details.component';
+import { JobService } from './config/config.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { DetailsComponent } from './details/details.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    JobService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

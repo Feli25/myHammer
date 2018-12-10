@@ -1,6 +1,9 @@
 .table {
   margin-left: 10vw;
   margin-right: 10vw;
-  width: 30vw;
+  width: 18rem;
   margin-top: 20px;
+}
+@media screen and (max-width: 1000px) {
+  margin-right: 0vw;
 }

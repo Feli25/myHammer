@@ -4,3 +4,14 @@
   width: 40vw;
   border: 1px solid black;
 }
+@media screen and (max-width: 1000px) {
+  .details {
+    margin-left: 0vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .details {
+    margin-left: 10vw;
+    width: 80vw;
+  }
+}
