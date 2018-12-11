@@ -7,13 +7,11 @@ import {JobService} from './config/config.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title : string;
   jobs : Object[];
   selectedJob : Object;
   hide : boolean;
 
   constructor(private jobService: JobService){
-    this.title = 'the MyHammer Frontend Coding Challenge';
     this.hide = true
     this.selectedJob = {
       title: "",
