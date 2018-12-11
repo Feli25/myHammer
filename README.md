@@ -1,6 +1,6 @@
 # myHammer
 
-##Instructions
+## Instructions
 
 **to clone and run the project**
 
